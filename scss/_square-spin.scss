@@ -1,0 +1,72 @@
+@keyframes loaderSize {
+  0% {
+    height: 100%;
+    width: 100%;
+  }
+  25% {
+    height: 0%;
+    width: 100%;
+  }
+  50% {
+    height: 100%;
+    width: 100%;
+  }
+  75% {
+    height: 100%;
+    width: 0%;
+  }
+  100% {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@keyframes loaderColor {
+  0% {
+    background-color: $color-one;
+  }
+  25% {
+    background-color: $color-one;
+  }
+  26% {
+    background-color: $color-two;
+  }
+  75% {
+    background-color: $color-two;
+  }
+  76% {
+    background-color: $color-one;
+  }
+  100% {
+    background-color: $color-one;
+  }
+}
+
+@keyframes loaderRotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.square-spin{
+  animation-name: loaderRotate;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  &:before{
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-name: loaderSize, loaderColor;
+  }
+}
