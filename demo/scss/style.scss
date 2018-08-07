@@ -1,7 +1,7 @@
 @import 'vendors/normalize';
 @import "vendors/flexboxgrid";
 @import url('https://fonts.googleapis.com/css?family=Headland+One|Open+Sans');
-@import '../../scss/hourglass-theme';
+@import '../../scss/hourglass';
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -27,6 +27,7 @@ h1, h2, h3, h4 {
 .example{
   background-color: #f2f2f2;
   padding-bottom: 40px;
+  margin-bottom: 20px;
   .example--subtitle{
     &:before{
       content: '';

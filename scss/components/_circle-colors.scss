@@ -1,9 +1,11 @@
 .loader{
-  &.square-spin{
+  &.circle-colors{
+    @extend %circle;
     animation-name: loaderRotate;
     animation-duration: 1.8s;
     animation-iteration-count: infinite;
     &:before{
+      overflow: hidden;
       animation-duration: 1.8s;
       animation-iteration-count: infinite;
       animation-name: loaderSize, loaderColor;

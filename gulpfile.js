@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
 
 const paths = {
   app: {
@@ -15,23 +16,27 @@ const paths = {
 gulp.task('sass', function () {
   return gulp.src(paths.app.sass)
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.app.css));
-});
-
-gulp.task('sass:watch', function () {
-  gulp.watch(paths.app.sass, ['sass']);
+    .pipe(gulp.dest(paths.app.css))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('demo', function () {
   return gulp.src(paths.demo.sass)
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.demo.css));
+    .pipe(gulp.dest(paths.demo.css))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('demo:watch', function () {
+gulp.task('server', function() {
+  browserSync.init({
+      server: {
+          baseDir: "./demo/"
+      }
+  });
+  gulp.watch(paths.app.sass, ['sass']);
   gulp.watch(paths.demo.sass, ['demo']);
 });
 
-gulp.task('dev', ['sass', 'sass:watch', 'demo:watch']);
+gulp.task('dev', ['sass', 'demo', 'server']);
 
-gulp.task('default', ['sass', 'sass:watch']);
+gulp.task('default', ['sass']);

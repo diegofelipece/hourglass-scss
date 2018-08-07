@@ -1,12 +1,14 @@
 // hourglass by diegoesteves_ink
 
 // theme
-@import 'hourglass-theme.scss';
+@import 'hourglass-theme';
 
 // globals
-@import 'globals/positions.scss';
-@import 'globals/loader.scss';
-@import 'globals/animations.scss';
+@import 'globals/positions';
+@import 'globals/shapes';
+@import 'globals/loader';
+@import 'globals/animations';
 
 // components
-@import 'components/square-spin.scss';
+@import 'components/square-spin';
+@import 'components/circle-colors';

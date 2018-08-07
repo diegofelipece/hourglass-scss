@@ -13,6 +13,9 @@
   margin-top: -15px;
   z-index: 999; }
 
+.loader.circle-colors {
+  border-radius: 999rem; }
+
 .loader {
   width: 30px;
   height: 30px;
@@ -68,11 +71,21 @@
   100% {
     transform: rotate(180deg); } }
 
-.square-spin {
+.loader.square-spin {
   animation-name: loaderRotate;
   animation-duration: 1.8s;
   animation-iteration-count: infinite; }
-  .square-spin:before {
+  .loader.square-spin:before {
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-name: loaderSize, loaderColor; }
+
+.loader.circle-colors {
+  animation-name: loaderRotate;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite; }
+  .loader.circle-colors:before {
+    overflow: hidden;
     animation-duration: 1.8s;
     animation-iteration-count: infinite;
     animation-name: loaderSize, loaderColor; }
