@@ -932,7 +932,8 @@ template {
   height: 30px;
   background: #ce796b;
   display: block;
-  margin: auto; }
+  margin: auto;
+  box-sizing: border-box; }
   .loader.has-shadow {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
   .loader:before {
@@ -981,12 +982,14 @@ template {
 
 @keyframes loaderBorderShift {
   0% {
-    border-width: 3px 6px 3px 6px; }
+    border-top-color: #8b1e3f;
+    border-bottom-color: rgba(139, 30, 63, 0.4); }
   50% {
-    border-width: 6px 3px 6px 3px;
-    border-color: #8b1e3f; }
+    border-top-color: rgba(139, 30, 63, 0.4);
+    border-bottom-color: #8b1e3f; }
   100% {
-    border-width: 3px 6px 3px 6px; } }
+    border-top-color: #8b1e3f;
+    border-bottom-color: rgba(139, 30, 63, 0.4); } }
 
 @keyframes loaderBorderColor {
   0% {
@@ -1008,6 +1011,23 @@ template {
   100% {
     transform: rotate(180deg); } }
 
+@keyframes loaderBlur {
+  0% {
+    background-color: #8b1e3f;
+    box-shadow: 0 0 0px 0px #8b1e3f; }
+  25% {
+    background-color: #3c153b;
+    box-shadow: 0 0 12px 8px #3c153b; }
+  50% {
+    background-color: #8b1e3f;
+    box-shadow: 0 0 0px 0px #8b1e3f; }
+  75% {
+    background-color: #ce796b;
+    box-shadow: 0 0 12px 8px #ce796b; }
+  100% {
+    background-color: #8b1e3f;
+    box-shadow: 0 0 0px 0px #8b1e3f; } }
+
 @keyframes loaderRotateFluid {
   0% {
     transform: rotate(0); }
@@ -1024,12 +1044,12 @@ template {
     animation-name: loaderSize, loaderColor; }
 
 .loader.circle-colors {
-  animation-name: loaderColorSoft;
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite; }
-  .loader.circle-colors:before {
-    animation-duration: 1.8s;
-    animation-iteration-count: infinite; }
+  position: relative;
+  animation-name: loaderBlur;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  width: 8px;
+  height: 8px; }
 
 .loader.circle-spin {
   background-color: transparent;
@@ -1038,14 +1058,16 @@ template {
   border-color: transparent;
   animation-name: loaderBorderColor, loaderRotateFluid;
   animation-duration: 0.6s;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  box-sizing: content-box; }
 
 .loader.circle-border {
-  background-color: transparent;
-  border: 6px dotted rgba(206, 121, 107, 0.6);
-  position: relative; }
-  .loader.circle-border:before {
-    display: none; }
+  background: transparent;
+  border: 4px solid transparent;
+  animation-name: loaderBorderShift, loaderRotateFluid;
+  animation-duration: 1s, 0.6s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -1075,19 +1097,21 @@ a {
   font-family: 'Headland One', serif;
   font-size: 4rem; }
 
-.example .box {
-  background-color: #f2f2f2;
-  padding: 10px 20px 40px 20px;
-  margin-bottom: 14px;
-  border-radius: 8px; }
-
-.example .example--subtitle:before {
-  content: '';
-  width: 10px;
-  height: 0;
-  display: inline-block;
-  border-bottom: 2px solid #8b1e3f;
-  margin-right: 10px; }
+.example {
+  margin-bottom: 14px; }
+  .example .box {
+    background-color: #f2f2f2;
+    padding: 10px 20px 40px 20px;
+    border-radius: 8px;
+    height: 100%;
+    box-sizing: border-box; }
+  .example .example--subtitle:before {
+    content: '';
+    width: 10px;
+    height: 0;
+    display: inline-block;
+    border-bottom: 2px solid #8b1e3f;
+    margin-right: 10px; }
 
 .footer {
   background-color: #8b1e3f;

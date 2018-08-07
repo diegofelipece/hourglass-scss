@@ -4,6 +4,7 @@
   background: $color3;
   display: block;
   margin: auto;
+  box-sizing: border-box;
   &.has-shadow{
     box-shadow: 0px 0px 20px 0px rgba($black, 0.1);
   }

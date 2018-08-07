@@ -8,5 +8,6 @@
     animation-name: loaderBorderColor, loaderRotateFluid;
     animation-duration: 0.6s;
     animation-iteration-count: infinite;
+    box-sizing: content-box;
   }
 }

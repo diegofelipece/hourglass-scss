@@ -56,14 +56,16 @@
 
 @keyframes loaderBorderShift {
   0% {
-    border-width: 3px 6px 3px 6px;
+    border-top-color: rgba($color1, 1);
+    border-bottom-color: rgba($color1, 0.4);
   }
   50% {
-    border-width: 6px 3px 6px 3px;
-    border-color: $color1;
+    border-top-color: rgba($color1, 0.4);
+    border-bottom-color: rgba($color1, 1);
   }
   100% {
-    border-width: 3px 6px 3px 6px;
+    border-top-color: rgba($color1, 1);
+    border-bottom-color: rgba($color1, 0.4);
   }
 }
 
@@ -94,6 +96,29 @@
   }
   100% {
     transform: rotate(180deg);
+  }
+}
+
+@keyframes loaderBlur {
+  0% {
+    background-color: $color1;
+    box-shadow: 0 0 0px 0px $color1;
+  }
+  25% {
+    background-color: $color2;
+    box-shadow: 0 0 12px 8px $color2;
+  }
+  50% {
+    background-color: $color1;
+    box-shadow: 0 0 0px 0px $color1;
+  }
+  75% {
+    background-color: $color3;
+    box-shadow: 0 0 12px 8px $color3;
+  }
+  100% {
+    background-color: $color1;
+    box-shadow: 0 0 0px 0px $color1;
   }
 }
 

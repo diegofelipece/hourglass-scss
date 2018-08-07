@@ -1,13 +1,11 @@
 .loader{
   &.circle-colors{
     @extend %circle;
-    animation-name: loaderColorSoft;
-    animation-duration: 1.8s;
+    position: relative;
+    animation-name: loaderBlur;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
-    &:before{
-      animation-duration: 1.8s;
-      animation-iteration-count: infinite;
-      //animation-name: loaderSize, loaderColor;
-    }
+    width: 8px;
+    height: 8px;
   }
 }
