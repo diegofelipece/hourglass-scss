@@ -1,5 +1,5 @@
 {
-  "name": "scss-loaders",
+  "name": "hourglass-scss",
   "version": "1.0.0",
   "description": "A bunch of loaders made with CSS animations.",
   "main": "index.js",

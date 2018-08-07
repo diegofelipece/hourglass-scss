@@ -1,13 +1,24 @@
-.loader {
-  width: 30px;
-  height: 30px;
-  background: #f0c987;
+.absolute-center.loader {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -15px;
+  margin-top: -15px; }
+
+.fixed-center.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
   margin-top: -15px;
+  z-index: 999; }
+
+.loader {
+  width: 30px;
+  height: 30px;
+  background: #ce796b;
   display: block;
+  margin: auto;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
   .loader:before {
     content: '';
@@ -37,9 +48,9 @@
   25% {
     background-color: #8b1e3f; }
   26% {
-    background-color: #3c153b; }
+    background-color: #ecc8af; }
   75% {
-    background-color: #3c153b; }
+    background-color: #ecc8af; }
   76% {
     background-color: #8b1e3f; }
   100% {
