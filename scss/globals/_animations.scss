@@ -47,10 +47,22 @@
     background-color: $color1;
   }
   50% {
-    background-color: $color5;
+    background-color: $color3;
   }
   100% {
     background-color: $color1;
+  }
+}
+
+@keyframes loader3d {
+  0% {
+    border-radius: 0%;
+  }
+  50% {
+    border-radius: 100%;
+  }
+  100% {
+    border-radius: 0%;
   }
 }
 

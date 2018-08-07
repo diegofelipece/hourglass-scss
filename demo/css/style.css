@@ -933,10 +933,11 @@ template {
   background: #ce796b;
   display: block;
   margin: auto;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  position: relative; }
   .loader.has-shadow {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
-  .loader:before {
+  .loader:before, .loader:after {
     content: '';
     position: absolute;
     display: block; }
@@ -976,9 +977,17 @@ template {
   0% {
     background-color: #8b1e3f; }
   50% {
-    background-color: #ecc8af; }
+    background-color: #ce796b; }
   100% {
     background-color: #8b1e3f; } }
+
+@keyframes loader3d {
+  0% {
+    border-radius: 0%; }
+  50% {
+    border-radius: 100%; }
+  100% {
+    border-radius: 0%; } }
 
 @keyframes loaderBorderShift {
   0% {
@@ -1042,6 +1051,12 @@ template {
     animation-duration: 1.8s;
     animation-iteration-count: infinite;
     animation-name: loaderSize, loaderColor; }
+
+.loader.square-turning {
+  background-color: #8b1e3f;
+  animation-name: loaderRotateFluid, loader3d, loaderColorSoft;
+  animation-duration: 1s, 2s, 4s;
+  animation-iteration-count: infinite; }
 
 .loader.circle-colors {
   position: relative;
