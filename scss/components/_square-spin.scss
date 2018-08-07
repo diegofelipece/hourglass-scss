@@ -23,22 +23,22 @@
 
 @keyframes loaderColor {
   0% {
-    background-color: $color-one;
+    background-color: $color1;
   }
   25% {
-    background-color: $color-one;
+    background-color: $color1;
   }
   26% {
-    background-color: $color-two;
+    background-color: $color2;
   }
   75% {
-    background-color: $color-two;
+    background-color: $color2;
   }
   76% {
-    background-color: $color-one;
+    background-color: $color1;
   }
   100% {
-    background-color: $color-one;
+    background-color: $color1;
   }
 }
 
