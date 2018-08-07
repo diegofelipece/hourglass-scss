@@ -1,0 +1,12 @@
+.loader{
+  &.circle-spin{
+    @extend %circle;
+    background-color: transparent;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+    animation-name: loaderBorderColor, loaderRotateFluid;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+  }
+}

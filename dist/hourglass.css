@@ -13,7 +13,7 @@
   margin-top: -15px;
   z-index: 999; }
 
-.loader.circle-colors {
+.loader.circle-colors, .loader.circle-spin, .loader.circle-border {
   border-radius: 999rem; }
 
 .loader {
@@ -21,8 +21,9 @@
   height: 30px;
   background: #ce796b;
   display: block;
-  margin: auto;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
+  margin: auto; }
+  .loader.has-shadow {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
   .loader:before {
     content: '';
     position: absolute;
@@ -59,6 +60,31 @@
   100% {
     background-color: #8b1e3f; } }
 
+@keyframes loaderColorSoft {
+  0% {
+    background-color: #8b1e3f; }
+  50% {
+    background-color: #ecc8af; }
+  100% {
+    background-color: #8b1e3f; } }
+
+@keyframes loaderBorderShift {
+  0% {
+    border-width: 3px 6px 3px 6px; }
+  50% {
+    border-width: 6px 3px 6px 3px;
+    border-color: #8b1e3f; }
+  100% {
+    border-width: 3px 6px 3px 6px; } }
+
+@keyframes loaderBorderColor {
+  0% {
+    border-top-color: #ce796b; }
+  50% {
+    border-top-color: #3c153b; }
+  100% {
+    border-top-color: #ce796b; } }
+
 @keyframes loaderRotate {
   0% {
     transform: rotate(0); }
@@ -71,6 +97,12 @@
   100% {
     transform: rotate(180deg); } }
 
+@keyframes loaderRotateFluid {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 .loader.square-spin {
   animation-name: loaderRotate;
   animation-duration: 1.8s;
@@ -81,11 +113,25 @@
     animation-name: loaderSize, loaderColor; }
 
 .loader.circle-colors {
-  animation-name: loaderRotate;
+  animation-name: loaderColorSoft;
   animation-duration: 1.8s;
   animation-iteration-count: infinite; }
   .loader.circle-colors:before {
-    overflow: hidden;
     animation-duration: 1.8s;
-    animation-iteration-count: infinite;
-    animation-name: loaderSize, loaderColor; }
+    animation-iteration-count: infinite; }
+
+.loader.circle-spin {
+  background-color: transparent;
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent;
+  animation-name: loaderBorderColor, loaderRotateFluid;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite; }
+
+.loader.circle-border {
+  background-color: transparent;
+  border: 6px dotted rgba(206, 121, 107, 0.6);
+  position: relative; }
+  .loader.circle-border:before {
+    display: none; }

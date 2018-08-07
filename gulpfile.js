@@ -33,8 +33,7 @@ gulp.task('server', function() {
           baseDir: "./demo/"
       }
   });
-  gulp.watch(paths.app.sass, ['sass']);
-  gulp.watch(paths.demo.sass, ['demo']);
+  gulp.watch([paths.app.sass, paths.demo.sass], ['sass', 'demo']);
 });
 
 gulp.task('dev', ['sass', 'demo', 'server']);

@@ -924,7 +924,7 @@ template {
   margin-top: -15px;
   z-index: 999; }
 
-.loader.circle-colors {
+.loader.circle-colors, .loader.circle-spin, .loader.circle-border {
   border-radius: 999rem; }
 
 .loader {
@@ -932,8 +932,9 @@ template {
   height: 30px;
   background: #ce796b;
   display: block;
-  margin: auto;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
+  margin: auto; }
+  .loader.has-shadow {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); }
   .loader:before {
     content: '';
     position: absolute;
@@ -970,6 +971,31 @@ template {
   100% {
     background-color: #8b1e3f; } }
 
+@keyframes loaderColorSoft {
+  0% {
+    background-color: #8b1e3f; }
+  50% {
+    background-color: #ecc8af; }
+  100% {
+    background-color: #8b1e3f; } }
+
+@keyframes loaderBorderShift {
+  0% {
+    border-width: 3px 6px 3px 6px; }
+  50% {
+    border-width: 6px 3px 6px 3px;
+    border-color: #8b1e3f; }
+  100% {
+    border-width: 3px 6px 3px 6px; } }
+
+@keyframes loaderBorderColor {
+  0% {
+    border-top-color: #ce796b; }
+  50% {
+    border-top-color: #3c153b; }
+  100% {
+    border-top-color: #ce796b; } }
+
 @keyframes loaderRotate {
   0% {
     transform: rotate(0); }
@@ -982,6 +1008,12 @@ template {
   100% {
     transform: rotate(180deg); } }
 
+@keyframes loaderRotateFluid {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 .loader.square-spin {
   animation-name: loaderRotate;
   animation-duration: 1.8s;
@@ -992,14 +1024,28 @@ template {
     animation-name: loaderSize, loaderColor; }
 
 .loader.circle-colors {
-  animation-name: loaderRotate;
+  animation-name: loaderColorSoft;
   animation-duration: 1.8s;
   animation-iteration-count: infinite; }
   .loader.circle-colors:before {
-    overflow: hidden;
     animation-duration: 1.8s;
-    animation-iteration-count: infinite;
-    animation-name: loaderSize, loaderColor; }
+    animation-iteration-count: infinite; }
+
+.loader.circle-spin {
+  background-color: transparent;
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent;
+  animation-name: loaderBorderColor, loaderRotateFluid;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite; }
+
+.loader.circle-border {
+  background-color: transparent;
+  border: 6px dotted rgba(206, 121, 107, 0.6);
+  position: relative; }
+  .loader.circle-border:before {
+    display: none; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -1011,21 +1057,42 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Headland One', serif; }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s; }
+  a:hover {
+    color: #ce796b; }
+
 .wrapper {
   max-width: 1280px; }
+
+.head {
+  text-align: center;
+  margin: 40px 0; }
 
 .hero-title {
   font-family: 'Headland One', serif;
   font-size: 4rem; }
 
-.example {
+.example .box {
   background-color: #f2f2f2;
-  padding-bottom: 40px;
-  margin-bottom: 20px; }
-  .example .example--subtitle:before {
-    content: '';
-    width: 40px;
-    height: 0;
-    display: inline-block;
-    border-bottom: 2px dotted #8b1e3f;
-    margin-right: 10px; }
+  padding: 10px 20px 40px 20px;
+  margin-bottom: 14px;
+  border-radius: 8px; }
+
+.example .example--subtitle:before {
+  content: '';
+  width: 10px;
+  height: 0;
+  display: inline-block;
+  border-bottom: 2px solid #8b1e3f;
+  margin-right: 10px; }
+
+.footer {
+  background-color: #8b1e3f;
+  padding: 14px 0;
+  text-align: center;
+  color: #ecc8af;
+  font-size: 12px;
+  margin-top: 60px; }

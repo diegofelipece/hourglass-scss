@@ -1,0 +1,14 @@
+.loader{
+  &.circle-border{
+    @extend %circle;
+    background-color: transparent;
+    border: 6px dotted rgba($color3, 0.6);
+    position: relative;
+//    border-right: 4px solid $color1;
+//    animation: loaderRotateFluid 2s linear infinite;
+
+    &:before{
+      display: none;
+    }
+  }
+}

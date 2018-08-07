@@ -42,6 +42,43 @@
   }
 }
 
+@keyframes loaderColorSoft {
+  0% {
+    background-color: $color1;
+  }
+  50% {
+    background-color: $color5;
+  }
+  100% {
+    background-color: $color1;
+  }
+}
+
+@keyframes loaderBorderShift {
+  0% {
+    border-width: 3px 6px 3px 6px;
+  }
+  50% {
+    border-width: 6px 3px 6px 3px;
+    border-color: $color1;
+  }
+  100% {
+    border-width: 3px 6px 3px 6px;
+  }
+}
+
+@keyframes loaderBorderColor {
+  0% {
+    border-top-color: $color3;
+  }
+  50% {
+    border-top-color: $color2;
+  }
+  100% {
+    border-top-color: $color3;
+  }
+}
+
 @keyframes loaderRotate {
   0% {
     transform: rotate(0);
@@ -57,5 +94,14 @@
   }
   100% {
     transform: rotate(180deg);
+  }
+}
+
+@keyframes loaderRotateFluid {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
