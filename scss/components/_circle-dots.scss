@@ -1,0 +1,28 @@
+.circle-dots{
+  @extend %circle;
+  width: 10px;
+  height: 10px;
+  background-color: $color3;
+  &:after{
+    @extend %circle;
+    width: 10px;
+    height: 10px;
+    margin-left: 14px;
+    background-color: $color1;
+    animation-name: loaderMarginsAfter;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+  &:before{
+    @extend %circle;
+    width: 10px;
+    height: 10px;
+    margin-left: -14px;
+    background-color: $color2;
+    animation-name: loaderMarginsBefore;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+}

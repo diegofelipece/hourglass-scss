@@ -142,3 +142,40 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes loaderMarginsBefore {
+  0% {
+    margin-left: -10px;
+  }
+  25%{
+    margin-left: -10px;
+  }
+  50%{
+    margin-left: -20px;
+  }
+  75%{
+    margin-left: -10px;
+  }
+  100%{
+    margin-left: -10px;
+  }
+}
+@keyframes loaderMarginsAfter {
+  0% {
+    margin-left: 20px;
+  }
+  25%{
+    // aqui ele bate e precisa empurrar o outro
+    margin-left: 10px;
+  }
+  50%{
+    margin-left: 10px;
+  }
+  75%{
+    margin-left: 10px;
+    // aqui o outro bate e empurra esse
+  }
+  100%{
+    margin-left: 20px;
+  }
+}
