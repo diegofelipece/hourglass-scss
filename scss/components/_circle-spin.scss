@@ -1,5 +1,5 @@
-.loader {
-  &.circle-spin {
+.hourglass {
+  &.--circle-spin {
     @extend %circle;
 
     background-color: transparent;

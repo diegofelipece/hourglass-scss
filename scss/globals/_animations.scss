@@ -23,34 +23,34 @@
 
 @keyframes loaderColor {
   0% {
-    background-color: $color1;
+    background-color: $hourglassColor1;
   }
   25% {
-    background-color: $color1;
+    background-color: $hourglassColor1;
   }
   26% {
-    background-color: $color5;
+    background-color: $hourglassColor5;
   }
   75% {
-    background-color: $color5;
+    background-color: $hourglassColor5;
   }
   76% {
-    background-color: $color1;
+    background-color: $hourglassColor1;
   }
   100% {
-    background-color: $color1;
+    background-color: $hourglassColor1;
   }
 }
 
 @keyframes loaderColorSoft {
   0% {
-    background-color: $color1;
+    background-color: $hourglassColor1;
   }
   50% {
-    background-color: $color3;
+    background-color: $hourglassColor3;
   }
   100% {
-    background-color: $color1;
+    background-color: $hourglassColor1;
   }
 }
 
@@ -68,28 +68,28 @@
 
 @keyframes loaderBorderShift {
   0% {
-    border-top-color: rgba($color1, 1);
-    border-bottom-color: rgba($color1, 0.4);
+    border-top-color: rgba($hourglassColor1, 1);
+    border-bottom-color: rgba($hourglassColor1, 0.4);
   }
   50% {
-    border-top-color: rgba($color1, 0.4);
-    border-bottom-color: rgba($color1, 1);
+    border-top-color: rgba($hourglassColor1, 0.4);
+    border-bottom-color: rgba($hourglassColor1, 1);
   }
   100% {
-    border-top-color: rgba($color1, 1);
-    border-bottom-color: rgba($color1, 0.4);
+    border-top-color: rgba($hourglassColor1, 1);
+    border-bottom-color: rgba($hourglassColor1, 0.4);
   }
 }
 
 @keyframes loaderBorderColor {
   0% {
-    border-top-color: $color3;
+    border-top-color: $hourglassColor3;
   }
   50% {
-    border-top-color: $color2;
+    border-top-color: $hourglassColor2;
   }
   100% {
-    border-top-color: $color3;
+    border-top-color: $hourglassColor3;
   }
 }
 
@@ -113,24 +113,24 @@
 
 @keyframes loaderBlur {
   0% {
-    background-color: $color1;
-    box-shadow: 0 0 0px 0px $color1;
+    background-color: $hourglassColor1;
+    box-shadow: 0 0 0px 0px $hourglassColor1;
   }
   25% {
-    background-color: $color2;
-    box-shadow: 0 0 12px 8px $color2;
+    background-color: $hourglassColor2;
+    box-shadow: 0 0 12px 8px $hourglassColor2;
   }
   50% {
-    background-color: $color1;
-    box-shadow: 0 0 0px 0px $color1;
+    background-color: $hourglassColor1;
+    box-shadow: 0 0 0px 0px $hourglassColor1;
   }
   75% {
-    background-color: $color3;
-    box-shadow: 0 0 12px 8px $color3;
+    background-color: $hourglassColor3;
+    box-shadow: 0 0 12px 8px $hourglassColor3;
   }
   100% {
-    background-color: $color1;
-    box-shadow: 0 0 0px 0px $color1;
+    background-color: $hourglassColor1;
+    box-shadow: 0 0 0px 0px $hourglassColor1;
   }
 }
 
@@ -165,7 +165,6 @@
     margin-left: 20px;
   }
   25%{
-    // aqui ele bate e precisa empurrar o outro
     margin-left: 10px;
   }
   50%{
@@ -173,7 +172,6 @@
   }
   75%{
     margin-left: 10px;
-    // aqui o outro bate e empurra esse
   }
   100%{
     margin-left: 20px;
