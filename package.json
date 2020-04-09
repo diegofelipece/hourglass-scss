@@ -2,12 +2,16 @@
   "name": "hourglass-scss",
   "version": "1.0.1",
   "description": "A bunch of loaders made with CSS animations.",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp dev",
     "build": "gulp"
   },
-  "author": "https://github.com/diegofelipece/hourglass-scss",
+  "author": "Diego Esteves <diegofelipece@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://diegofelipece@github.com/diegofelipece/hourglass-scss.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3",
