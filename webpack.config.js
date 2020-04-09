@@ -3,8 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isDevMode = process.env.NODE_ENV !== 'production';
 const minifiedName = isDevMode ? '' : '.min';
@@ -49,7 +48,7 @@ if (isDevMode) {
   config.mode = 'development';
 
   config.entry = {
-    demo: `${DIR.DEMO}/scss/style.scss`
+    demo: `${DIR.DEMO}/style.scss`
   };
 
   config.plugins.push(new HtmlWebpackPlugin({
