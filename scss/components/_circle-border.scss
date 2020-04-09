@@ -1,5 +1,5 @@
-.loader {
-  &.circle-border {
+.hourglass {
+  &.--circle-border {
     @extend %circle;
 
     background: transparent;
