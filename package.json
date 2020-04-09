@@ -4,8 +4,8 @@
   "description": "A bunch of loaders made with CSS animations.",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp dev",
-    "build": "gulp"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "author": "Diego Esteves <diegofelipece@gmail.com>",
   "repository": {
@@ -14,8 +14,9 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2"
-  }
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {}
 }
