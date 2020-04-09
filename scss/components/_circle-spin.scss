@@ -1,6 +1,7 @@
-.loader{
-  &.circle-spin{
+.loader {
+  &.circle-spin {
     @extend %circle;
+
     background-color: transparent;
     border-width: 4px;
     border-style: solid;

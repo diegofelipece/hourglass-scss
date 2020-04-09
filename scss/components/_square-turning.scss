@@ -1,12 +1,8 @@
-.loader{
-  &.square-turning{
+.loader {
+  &.square-turning {
     background-color: $color1;
     animation-name: loaderRotateFluid, loader3d, loaderColorSoft;
     animation-duration: 1s, 2s, 4s;
     animation-iteration-count: infinite;
-    &:after{
-    }
-    &:before{
-    }
   }
 }

@@ -3,13 +3,13 @@
 Hourglass is a bunch of CSS loaders I've been doing with SASS, based on the concept of heaving a single HTML only, with some simple class options, like:
 
 ``` html
-<div class="loader"></div>
+<span class="loader"></span>
 ```
 
 With some animations options based on the class added:
 
 ``` html
-<div class="loader square-spin"></div>
+<span class="loader square-spin"></span>
 ```
 
 Examples hosted here:

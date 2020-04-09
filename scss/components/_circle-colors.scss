@@ -1,6 +1,7 @@
-.loader{
-  &.circle-colors{
+.loader {
+  &.circle-colors {
     @extend %circle;
+
     position: relative;
     animation-name: loaderBlur;
     animation-duration: 4s;

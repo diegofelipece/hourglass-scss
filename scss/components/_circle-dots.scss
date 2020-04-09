@@ -1,10 +1,13 @@
-.circle-dots{
+.circle-dots {
   @extend %circle;
+
   width: 10px;
   height: 10px;
   background-color: $color3;
-  &:after{
+
+  &:after {
     @extend %circle;
+
     width: 10px;
     height: 10px;
     margin-left: 14px;
@@ -14,8 +17,10 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease;
   }
-  &:before{
+
+  &:before {
     @extend %circle;
+
     width: 10px;
     height: 10px;
     margin-left: -14px;

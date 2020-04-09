@@ -1,16 +1,14 @@
 {
   "name": "hourglass-scss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A bunch of loaders made with CSS animations.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "scripts": {},
+  "author": "https://github.com/diegofelipece/",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.6",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
   }
 }

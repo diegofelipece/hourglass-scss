@@ -1,9 +1,10 @@
-.loader{
-  &.square-spin{
+.loader {
+  &.square-spin {
     animation-name: loaderRotate;
     animation-duration: 1.8s;
     animation-iteration-count: infinite;
-    &:before{
+
+    &:before {
       animation-duration: 1.8s;
       animation-iteration-count: infinite;
       animation-name: loaderSize, loaderColor;

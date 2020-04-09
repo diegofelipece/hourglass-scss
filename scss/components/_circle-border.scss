@@ -1,6 +1,7 @@
-.loader{
-  &.circle-border{
+.loader {
+  &.circle-border {
     @extend %circle;
+
     background: transparent;
     border: 4px solid transparent;
     animation-name: loaderBorderShift, loaderRotateFluid;

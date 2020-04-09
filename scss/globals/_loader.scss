@@ -1,4 +1,4 @@
-.loader{
+.loader {
   width: 30px;
   height: 30px;
   background: $color3;
@@ -6,11 +6,14 @@
   margin: auto;
   box-sizing: border-box;
   position: relative;
-  &.has-shadow{
+
+  &.has-shadow {
     box-shadow: 0px 0px 20px 0px rgba($black, 0.1);
   }
+
   @extend %positions;
-  &:before, &:after{
+
+  &:before, &:after {
     content: '';
     position: absolute;
     display: block;
