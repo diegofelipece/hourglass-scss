@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 const isDevMode = process.env.NODE_ENV !== 'production';
 const minifiedName = isDevMode ? '' : '.min';
@@ -18,9 +19,6 @@ const config = {
   mode: 'production',
   entry: {
     hourglass: `${DIR.SASS}/hourglass.scss`,
-  },
-  output: {
-    filename: `[name]${minifiedName}.js`,
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
@@ -38,6 +36,7 @@ const config = {
     ],
   },
   plugins: [
+    new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: `[name]${minifiedName}.css`,
     })
