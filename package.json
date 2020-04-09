@@ -19,6 +19,7 @@
     "@types/node-sass": "^4.11.0",
     "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
     "@types/terser-webpack-plugin": "^2.2.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.5.1",
     "flexboxgrid": "^6.3.1",
     "html-webpack-plugin": "^4.0.4",
