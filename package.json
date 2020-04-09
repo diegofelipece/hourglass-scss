@@ -2,7 +2,7 @@
   "name": "hourglass-scss",
   "version": "1.0.1",
   "description": "A bunch of loaders made with CSS animations.",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack"

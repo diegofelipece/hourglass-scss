@@ -58,7 +58,7 @@ a {
     height: 100%;
     box-sizing: border-box;
   }
-  .example--subtitle{
+  &__subtitle{
     &:before{
       content: '';
       width: 10px;
