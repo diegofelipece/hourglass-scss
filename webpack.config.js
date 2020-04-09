@@ -12,7 +12,7 @@ const minifiedName = isDevMode ? '' : '.min';
 const DIR = {
   DEMO: path.resolve(__dirname, './demo'),
   SASS: path.resolve(__dirname, './scss'),
-  DIST: path.resolve(__dirname, './dist'),
+  DIST: path.resolve(__dirname, './css'),
 }
 
 const config = {
@@ -55,6 +55,7 @@ const config = {
   plugins: [
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
+      path: DIR.DIST,
       filename: `[name]${minifiedName}.css`,
     })
   ]
