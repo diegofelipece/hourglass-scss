@@ -1,7 +1,7 @@
-@import 'vendors/normalize';
-@import "vendors/flexboxgrid";
+@import '~normalize.css/normalize.css';
+@import "~flexboxgrid/css/flexboxgrid.css";
 @import url('https://fonts.googleapis.com/css?family=Headland+One|Open+Sans');
-@import '../../scss/hourglass';
+@import 'scss/hourglass';
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -26,6 +26,7 @@ a {
 
 .wrapper{
   max-width: 1280px;
+  padding: 16px;
 }
 
 .head{

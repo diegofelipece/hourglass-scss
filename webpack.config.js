@@ -7,6 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isDevMode = process.env.NODE_ENV !== 'production';
+const minifiedName = isDevMode ? '' : '.min';
 
 const DIR = {
   DEMO: path.resolve(__dirname, './demo'),
@@ -16,11 +17,11 @@ const DIR = {
 
 const config = {
   mode: 'production',
-  entry: [
-    `${DIR.SASS}/hourglass.scss`,
-  ],
+  entry: {
+    hourglass: `${DIR.SASS}/hourglass.scss`,
+  },
   output: {
-    filename: isDevMode ? 'hourglass.js' : 'hourglass.min.js',
+    filename: `[name]${minifiedName}.js`,
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
@@ -39,7 +40,7 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: isDevMode ? 'hourglass.css' : 'hourglass.min.css',
+      filename: `[name]${minifiedName}.css`,
     })
   ]
 }
@@ -47,7 +48,9 @@ const config = {
 if (isDevMode) {
   config.mode = 'development';
 
-  config.entry.push(`${DIR.DEMO}/scss/style.scss`)
+  config.entry = {
+    demo: `${DIR.DEMO}/scss/style.scss`
+  };
 
   config.plugins.push(new HtmlWebpackPlugin({
     path: DIR.DEMO,
