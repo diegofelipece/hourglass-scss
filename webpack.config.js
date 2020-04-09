@@ -1,18 +1,27 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const isDevMode = process.env.NODE_ENV !== 'production';
 
 const DIR = {
-  DEMO_DIR: path.resolve('demo'),
-  SASS: path.resolve('scss'),
-  DIST: path.resolve('dist'),
+  DEMO: path.resolve('./demo'),
+  SASS: path.resolve('./scss'),
+  DIST: path.resolve('./dist'),
 }
 
-module.exports = {
-  mode: 'development',
+const config = {
+  mode: isDevMode ? 'development' : 'production',
   entry: './hourglass.js',
   output: {
-    filename: 'hourglass.js',
+    filename: isDevMode ? 'hourglass.js' : 'hourglass.min.js',
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   module: {
     rules: [
@@ -32,9 +41,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: 'hourglass.css',
+      filename: isDevMode ? 'hourglass.css' : 'hourglass.min.css',
     }),
   ],
   // devServer: {
@@ -43,3 +50,5 @@ module.exports = {
   //   port: 8080
   // }
 }
+
+module.exports = config;

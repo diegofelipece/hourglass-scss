@@ -4,8 +4,8 @@
   "description": "A bunch of loaders made with CSS animations.",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack",
+    "build": "NODE_ENV=production webpack"
   },
   "author": "Diego Esteves <https://gitgub.com/diegofelipece>",
   "repository": {
@@ -16,11 +16,15 @@
   "devDependencies": {
     "@types/mini-css-extract-plugin": "^0.9.1",
     "@types/node-sass": "^4.11.0",
+    "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
+    "@types/terser-webpack-plugin": "^2.2.0",
     "css-loader": "^3.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
+    "terser-webpack-plugin": "^2.3.5",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
