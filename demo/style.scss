@@ -1,13 +1,22 @@
-@import 'vendors/normalize';
-@import "vendors/flexboxgrid";
+/* Vendors */
+@import '~normalize.css/normalize.css';
+@import "~flexboxgrid/css/flexboxgrid.css";
 @import url('https://fonts.googleapis.com/css?family=Headland+One|Open+Sans');
-@import '../../scss/hourglass';
+
+/* Hourglass */
+$hourglassColor1: rgba(139, 30, 63, 1);
+$hourglassColor2: rgba(60, 21, 59, 1);
+$hourglassColor3: rgba(206, 121, 107, 1);
+$hourglassColor4: rgba(50, 41, 47, 1);
+$hourglassColor5: rgba(236, 200, 175, 1);
+
+@import 'scss/hourglass';
 
 body{
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   background-color: $white;
-  color: $color1;
+  color: $hourglassColor1;
   overflow-x: hidden;
 }
 
@@ -20,12 +29,14 @@ a {
   text-decoration: none;
   transition: color 0.4s;
   &:hover{
-    color: $color3;
+    color: $hourglassColor3;
   }
 }
 
 .wrapper{
   max-width: 1280px;
+  padding: 16px;
+  margin: 0 auto;
 }
 
 .head{
@@ -53,17 +64,17 @@ a {
       width: 10px;
       height: 0;
       display: inline-block;
-      border-bottom: 2px solid $color1;
+      border-bottom: 2px solid $hourglassColor1;
       margin-right: 10px;
     }
   }
 }
 
 .footer{
-  background-color: $color1;
+  background-color: $hourglassColor1;
   padding: 14px 0;
   text-align: center;
-  color: $color5;
+  color: $hourglassColor5;
   font-size: 12px;
   margin-top: 60px;
 }
